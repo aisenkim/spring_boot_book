@@ -1,6 +1,6 @@
 package com.aisen.book.spring_boot_book.web;
 
-import com.aisen.book.spring_boot_book.dto.HelloResponseDto;
+import com.aisen.book.spring_boot_book.web.dto.HelloResponseDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

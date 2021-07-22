@@ -1,4 +1,4 @@
-package com.aisen.book.spring_boot_book.dto;
+package com.aisen.book.spring_boot_book.web.dto;
 
 import org.junit.Test;
 
