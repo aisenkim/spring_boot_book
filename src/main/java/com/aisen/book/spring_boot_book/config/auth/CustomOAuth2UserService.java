@@ -1,6 +1,7 @@
 package com.aisen.book.spring_boot_book.config.auth;
 
 import com.aisen.book.spring_boot_book.config.auth.dto.OAuthAttributes;
+import com.aisen.book.spring_boot_book.config.auth.dto.SessionUser;
 import com.aisen.book.spring_boot_book.domain.user.User;
 import com.aisen.book.spring_boot_book.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
