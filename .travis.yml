@@ -37,3 +37,14 @@ deploy:
     wait-until-deployed: true
     on:
       all_branches: true
+
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: spring-boot-book-build
+    key: spring-boot-book.zip
+    bundle_type: zip
+    application: spring-boot-book
+    deployment_group: spring-boot-book-group
+    region: ap-northeast-2
+    wait-until-deployed: true
