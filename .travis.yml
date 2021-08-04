@@ -48,3 +48,5 @@ deploy:
     deployment_group: spring-boot-book-group
     region: ap-northeast-2
     wait-until-deployed: true
+    on:
+      all_branches: true
