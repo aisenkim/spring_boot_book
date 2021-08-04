@@ -1,0 +1,21 @@
+language: java
+jdk:
+  -opendjdk11
+
+branches:
+  only:
+    - master
+
+# Travis CI home server
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+
+script: "./gradlew clean build"
+
+# After CI completion, notify to email
+notifications:
+  email:
+    recipients:
+      - "aisenkim15@gmail.com"
