@@ -1,5 +1,7 @@
 package com.aisen.book.spring_boot_book.web;
 
+import com.aisen.book.spring_boot_book.config.auth.LoginUser;
+import com.aisen.book.spring_boot_book.config.auth.dto.SessionUser;
 import com.aisen.book.spring_boot_book.service.posts.PostsService;
 import com.aisen.book.spring_boot_book.web.dto.PostsResponseDto;
 import com.aisen.book.spring_boot_book.web.dto.PostsSaveRequestDto;
@@ -19,8 +21,8 @@ public class PostsApiController {
     }
 
     @PutMapping("/api/v1/posts/{id}")
-    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
-        return postsService.update(id, requestDto);
+    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto, @LoginUser SessionUser user) throws IllegalAccessException {
+        return postsService.update(id, requestDto, user);
     }
 
     @GetMapping("/api/v1/posts/{id}")

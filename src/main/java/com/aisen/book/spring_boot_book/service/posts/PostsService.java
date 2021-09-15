@@ -1,5 +1,6 @@
 package com.aisen.book.spring_boot_book.service.posts;
 
+import com.aisen.book.spring_boot_book.config.auth.dto.SessionUser;
 import com.aisen.book.spring_boot_book.domain.posts.Posts;
 import com.aisen.book.spring_boot_book.domain.posts.PostsRepository;
 import com.aisen.book.spring_boot_book.web.dto.PostsListResponseDto;
@@ -10,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.mail.Session;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,10 +27,15 @@ public class PostsService {
     }
 
     @Transactional
-    public Long update(Long id, PostsUpdateRequestDto requestDto) {
+    public Long update(Long id, PostsUpdateRequestDto requestDto, SessionUser user) throws IllegalAccessException {
 
         Posts posts = postsRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("No posts by the provided id: " + id));
+
+        // Authentication - check if user updating is the owner of the post
+//        String author = posts.getAuthor();
+//        if (!author.equals(user.getName()))
+//            throw new IllegalAccessException("No");
 
         posts.update(requestDto.getTitle(), requestDto.getContent());
 

@@ -4,8 +4,10 @@ import com.aisen.book.spring_boot_book.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 public class PostsSaveRequestDto {
 

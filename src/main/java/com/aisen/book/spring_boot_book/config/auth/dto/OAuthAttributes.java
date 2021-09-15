@@ -59,7 +59,8 @@ public class OAuthAttributes {
                 .name(name)
                 .email(email)
                 .picture(picture)
-                .role(Role.GUEST)
+                .role(Role.USER)
+                // change this to GUEST if don't want to give access of write to new users
                 .build();
     }
 }
